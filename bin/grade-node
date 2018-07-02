@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const gradeNode = require('commander');
+const actions = require('../lib/index');
+
+gradeNode
+  .version('1.0.0', '-v, --version');
+
+gradeNode
+  .command('hello <greeting>')
+  .description('Greet user.')
+  .action((greeting) => {
+    actions.test(greeting);
+  });
+
+gradeNode
+  .command('hi <greeting>')
+  .action((greeting) => {
+    actions.anotherTest(greeting);
+  });
+
+
+gradeNode.parse(process.argv);
