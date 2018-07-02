@@ -7,10 +7,15 @@
     "lib": "lib",
     "test": "test"
   },
+  "homepage": "https://github.com/ULL-ESIT-GRADOII-TFG/grade-node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ULL-ESIT-GRADOII-TFG/grade-node.git"
+  },
   "scripts": {
     "test": "npm test"
   },
-  "author": "Carlos de Armas Hernández",
+  "author": "Carlos de Armas Hernández <alu0100816167@ull.edu.es>",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^4.19.1",
