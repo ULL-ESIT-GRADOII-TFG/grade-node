@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 const chalk = require('chalk');
+const grade = require('../lib/index');
 
 const argv = require('yargs')
   .option('teacher', {
     alias: 't',
-    describe: 'provide path to teacher\'s private tests',
+    describe: 'provide path to teacher\'s private tests. Must be inside $HOME',
   })
   .option('output', {
     alias: 'o',
@@ -18,7 +19,7 @@ const argv = require('yargs')
   .detectLocale(false)
   .check((args) => {
     if (typeof args.teacher !== 'string') {
-      throw new Error(chalk.red(`--teacher, -t : must be a string for directory name. Provided: ${typeof args.teacher}`));
+      throw new Error(chalk.red(`--teacher, -t : must be a string for directory name under $HOME. Provided: ${typeof args.teacher}`));
     } else if (typeof args.output !== 'string') {
       throw new Error(chalk.red(`--output, -o : must be a string for file name. Provided: ${typeof args.output}`));
     }
@@ -26,5 +27,4 @@ const argv = require('yargs')
   })
   .argv;
 
-console.log(typeof argv.teacher);
-console.log(typeof argv.output);
+grade.init(argv);
