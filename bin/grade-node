@@ -14,12 +14,13 @@ const argv = require('yargs')
   .demandOption(['teacher', 'output'], 'Please provide both teacher and output arguments to work with this tool')
   .help('h')
   .alias('h', 'help')
+  .alias('v', 'version')
   .detectLocale(false)
-  .check((argv) => {
-    if (typeof argv.teacher !== 'string') {
-      throw new Error(chalk.red(`--teacher, -t : must be a string for directory name. Provided: ${typeof argv.teacher}`));
-    } else if (typeof argv.output !== 'string') {
-      throw new Error(chalk.red(`--output, -o : must be a string for file name. Provided: ${typeof argv.output}`));
+  .check((args) => {
+    if (typeof args.teacher !== 'string') {
+      throw new Error(chalk.red(`--teacher, -t : must be a string for directory name. Provided: ${typeof args.teacher}`));
+    } else if (typeof args.output !== 'string') {
+      throw new Error(chalk.red(`--output, -o : must be a string for file name. Provided: ${typeof args.output}`));
     }
     return true;
   })
