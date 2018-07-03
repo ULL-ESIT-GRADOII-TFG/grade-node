@@ -1,23 +1,29 @@
 #!/usr/bin/env node
+const chalk = require('chalk');
 
-const gradeNode = require('commander');
-const actions = require('../lib/index');
+const argv = require('yargs')
+  .option('teacher', {
+    alias: 't',
+    describe: 'provide path to teacher\'s private tests',
+  })
+  .option('output', {
+    alias: 'o',
+    describe: 'provide name to tests results file',
+  })
+  .usage('Usage: grade-node -t /teacher/tests/dir -o output.md')
+  .demandOption(['teacher', 'output'], 'Please provide both teacher and output arguments to work with this tool')
+  .help('h')
+  .alias('h', 'help')
+  .detectLocale(false)
+  .check((argv) => {
+    if (typeof argv.teacher !== 'string') {
+      throw new Error(chalk.red(`--teacher, -t : must be a string for directory name. Provided: ${typeof argv.teacher}`));
+    } else if (typeof argv.output !== 'string') {
+      throw new Error(chalk.red(`--output, -o : must be a string for file name. Provided: ${typeof argv.output}`));
+    }
+    return true;
+  })
+  .argv;
 
-gradeNode
-  .version('1.0.0', '-v, --version');
-
-gradeNode
-  .command('hello <greeting>')
-  .description('Greet user.')
-  .action((greeting) => {
-    actions.test(greeting);
-  });
-
-gradeNode
-  .command('hi <greeting>')
-  .action((greeting) => {
-    actions.anotherTest(greeting);
-  });
-
-
-gradeNode.parse(process.argv);
+console.log(typeof argv.teacher);
+console.log(typeof argv.output);
