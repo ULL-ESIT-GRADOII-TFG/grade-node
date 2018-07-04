@@ -2,7 +2,10 @@
   "name": "grade-node",
   "version": "1.0.0",
   "description": "To be used with ghedsh. Helps grading Node assignments.",
-  "main": "bin/grade-node",
+  "bin" : { 
+    "grade-node" : "./bin/grade-node" 
+  },
+  "main": "./bin/grade-node",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -22,7 +25,9 @@
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.2.0",
+    "rewire": "^4.0.1"
   },
   "dependencies": {
     "chalk": "^2.4.1",
