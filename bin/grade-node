@@ -1,8 +1,9 @@
 #!/usr/bin/env node
+
 const chalk = require('chalk');
 const grade = require('../lib/index');
 
-const argv = require('yargs')
+const argv = require('yargs') // eslint-disable-line prefer-destructuring
   .option('teacher', {
     alias: 't',
     describe: 'provide path to teacher\'s private tests. Must be inside $HOME',
@@ -27,4 +28,4 @@ const argv = require('yargs')
   })
   .argv;
 
-grade.init(argv);
+grade.start(argv);
