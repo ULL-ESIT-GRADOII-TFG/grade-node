@@ -1,14 +1,14 @@
 {
-  "name": "grade-node",
+  "name": "ghedsh-grade-node",
   "version": "1.0.0",
   "description": "To be used with ghedsh. Helps grading Node assignments.",
-  "bin" : { 
-    "grade-node" : "./bin/grade-node" 
+  "bin": {
+    "grade-node": "./bin/grade-node"
   },
   "main": "./bin/grade-node",
   "directories": {
     "lib": "lib",
-    "test": "test"
+    "test": "mocha"
   },
   "homepage": "https://github.com/ULL-ESIT-GRADOII-TFG/grade-node#readme",
   "repository": {
