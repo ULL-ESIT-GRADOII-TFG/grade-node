@@ -1,6 +1,6 @@
 {
   "name": "ghedsh-grade-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "To be used with ghedsh. Helps grading Node assignments.",
   "bin": {
     "grade-node": "./bin/grade-node"
