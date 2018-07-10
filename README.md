@@ -1,4 +1,6 @@
-# grade-node package
+# ghedsh-grade-node
+
+[![npm](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://www.npmjs.com/package/ghedsh-grade-node)
 
 ## Context (WIP)
 
