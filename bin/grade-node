@@ -6,21 +6,21 @@ const grade = require('../lib/index');
 const argv = require('yargs') // eslint-disable-line prefer-destructuring
   .option('teacher', {
     alias: 't',
-    describe: 'provide path to teacher\'s private tests. Must be inside $HOME',
+    describe: 'provide absolute path to teacher\'s private tests.',
   })
   .option('output', {
     alias: 'o',
     describe: 'provide name to tests results file',
   })
   .usage('Usage: grade-node -t /teacher/tests/dir -o output.md')
-  .demandOption(['teacher', 'output'], 'Please provide both teacher and output arguments to work with this tool')
+  .demandOption(['output'], 'Please provide argument "--output or -o" to work with this tool')
   .help('h')
   .alias('h', 'help')
   .alias('v', 'version')
   .detectLocale(false)
   .check((args) => {
-    if (typeof args.teacher !== 'string') {
-      throw new Error(chalk.red(`--teacher, -t : must be a string for directory name under $HOME. Provided: ${typeof args.teacher}`));
+    if (args.teacher && typeof args.teacher !== 'string') {
+      throw new Error(chalk.red(`--teacher, -t : must be a string for directory absolute path. Provided: ${typeof args.teacher}`));
     } else if (typeof args.output !== 'string') {
       throw new Error(chalk.red(`--output, -o : must be a string for file name. Provided: ${typeof args.output}`));
     }

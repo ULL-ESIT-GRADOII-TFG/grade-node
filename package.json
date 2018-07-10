@@ -1,25 +1,25 @@
 {
   "name": "ghedsh-grade-node",
   "version": "1.0.2",
-  "description": "To be used with ghedsh. Helps grading Node assignments.",
+  "description": "To be used with ghedsh. Helps teachers grading Node.js assignments.",
   "bin": {
     "grade-node": "./bin/grade-node"
   },
   "main": "./bin/grade-node",
-  "directories": {
-    "lib": "lib",
-    "test": "mocha"
+  "scripts": {
+    "test": "jest"
   },
   "homepage": "https://github.com/ULL-ESIT-GRADOII-TFG/grade-node#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/ULL-ESIT-GRADOII-TFG/grade-node.git"
   },
-  "scripts": {
-    "test": "npm test"
-  },
   "author": "Carlos de Armas Hernández <alu0100816167@ull.edu.es>",
   "license": "ISC",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
@@ -32,7 +32,6 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "fs-extra": "^6.0.1",
-    "glob": "^7.1.2",
     "yargs": "^12.0.1"
   }
 }
