@@ -4,6 +4,8 @@
 
 To be used with ghedsh. Helps grading Node assignments.
 
+<img src="img/ghedsh-grade-node.png" width="200">
+
 ## Prerequisites
 
 Node.js version `>=8.0.0` (async/await support).
