@@ -1,6 +1,42 @@
 # ghedsh-grade-node
 
-[![npm](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://www.npmjs.com/package/ghedsh-grade-node)
+[![npm](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://www.npmjs.com/package/ghedsh-grade-node)
+
+To be used with ghedsh. Helps grading Node assignments.
+
+## Prerequisites
+
+Node.js version `>=8.0.0` (async/await support).
+
+## Install
+
+    npm install ghedsh-grade-node --save
+
+## Usage
+
+    grade-node [--teacher/-t] </dir> <--output/-o> <output_file.extension>
+
+### Options
+
+`--teacher` or `-t` is the absolute path directory containing teacher's private tests.
+
+`--output` or `-o` tests output file name.
+
+`--version` or `-v` shows current package version.
+
+`--help` or `-h` prints usage help.
+
+## Performance
+
+If `--teacher` or `-t` option provided, `ghedsh-grade-node` will copy teacher's private tests into student's `/test` dir. (Else, jump to install dependencies process).
+
+Runs `npm intall`.
+
+Runs `npm install --only=dev`.
+
+Runs `npm test`. (Assumes that `npm test` command from `package.json` will run all tests under `/test` directory).
+
+Captures `stdout` and `stderr` into files.
 
 ## Context (WIP)
 
