@@ -5,6 +5,9 @@
   "bin": {
     "grade-node": "./bin/grade-node"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "main": "./bin/grade-node",
   "scripts": {
     "test": "jest"
