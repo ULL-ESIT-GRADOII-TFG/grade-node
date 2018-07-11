@@ -1,6 +1,6 @@
 # ghedsh-grade-node
 
-[![npm](https://img.shields.io/badge/version-1.0.4-blue.svg)](https://www.npmjs.com/package/ghedsh-grade-node)
+[![npm](https://img.shields.io/badge/version-1.0.5-blue.svg)](https://www.npmjs.com/package/ghedsh-grade-node)
 
 To be used with ghedsh. Helps grading Node assignments.
 
